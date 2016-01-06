@@ -7,7 +7,7 @@
 - (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
     if(PKPassLibrary.isPassLibraryAvailable) {
-        [self downloadPass:request success:nil error:nil];
+        [self downloadPass:request.URL success:nil error:nil];
         return YES;
     }
     
