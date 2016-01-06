@@ -6,8 +6,8 @@
 
 - (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    if(PKPassLibrary.isPassLibraryAvailable && [request.URL.pathExtension isEqualToString:@"pkpass"]) {
-        [self downloadPass:request.URL success:nil error:nil];
+    if(PKPassLibrary.isPassLibraryAvailable) {
+        [self downloadPass:request success:nil error:nil];
         return YES;
     }
     
